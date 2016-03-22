@@ -10,6 +10,7 @@ namespace PeopleReference.API.Models
         List<Person> people;
         public Datamanager()
         {
+            //people.Clear();
             people = new List<Person>();
 
             #region Addpeople
