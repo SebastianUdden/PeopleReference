@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -13,5 +13,21 @@
 <body>
     <h1>AngularJS</h1>
     <p>Explainer information</p>
+    <div ng-controller="myCtrl">
+
+        <p>Today's welcome message is:</p>
+        <h1>{{myWelcome}}</h1>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $http) {
+            $http.get("http://localhost:60167/api/people/")
+            .then(function (response) {
+                $scope.myWelcome = response.data;
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using PeopleReference.API.Models;
 
 namespace PeopleReference.API.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class PeopleController : Controller
     {
-        // GET: api/values
+        Datamanager dm = new Datamanager();
+        // GET: api/people
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Person> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dm.GetAllPeople();
         }
 
-        // GET api/values/5
+        // GET api/people/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Person Get(int id)
         {
-            return "value";
+            return dm.GetById(id);
         }
 
-        // POST api/values
+        // POST api/people
         [HttpPost]
         public void Post([FromBody]string value)
         {
