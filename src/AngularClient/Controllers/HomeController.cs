@@ -29,7 +29,7 @@ namespace AngularClient.Controllers
             var httpClient = new HttpClient();
             var json = await httpClient.GetStringAsync(url);
             var people = JsonConvert.DeserializeObject<Person[]>(json);
-            var arr = new PersonVM[10];
+            var arr = new PersonVM[people.Length];
             for (int i = 0; i < people.Length; i++)
             {
                 var temp = new PersonVM { Name = people[i].Name, Id = people[i].Id };

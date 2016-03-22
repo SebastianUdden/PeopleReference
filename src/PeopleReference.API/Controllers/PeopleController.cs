@@ -10,7 +10,8 @@ namespace PeopleReference.API.Controllers
     [Route("api/[controller]")]
     public class PeopleController : Controller
     {
-        Datamanager dm = new Datamanager();
+        
+            Datamanager dm = new Datamanager();
         // GET: api/people
         [HttpGet]
         public IEnumerable<Person> Get()
@@ -19,7 +20,7 @@ namespace PeopleReference.API.Controllers
         }
 
         // GET api/people/5
-        [HttpGet("GetById/{id}")]
+        [HttpGet("{id}")]
         public Person GetById(int id)
         {
             return dm.GetById(id);

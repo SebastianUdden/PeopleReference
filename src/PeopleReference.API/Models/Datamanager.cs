@@ -7,10 +7,10 @@ namespace PeopleReference.API.Models
 {
     public class Datamanager
     {
-        List<Person> people;
+         static List<Person> people = new List<Person>();
         public Datamanager()
         {
-            people = new List<Person>();
+            
 
             #region Addpeople
             people.Add(new Person("Bob"));
@@ -27,14 +27,14 @@ namespace PeopleReference.API.Models
         }
         public Person[] GetAllPeople()
         {
-            var peopleArray = new Person[10];
+            //var peopleArray = new Person[people.Count];
 
-            for (int i = 0; i < people.Count; i++)
-            {
-                peopleArray[i] = people[i];
-            }
+            //for (int i = 0; i < people.Count; i++)
+            //{
+            //    peopleArray[i] = people[i];
+            //}
            
-            return peopleArray;
+            return people.ToArray();
         }
 
         public Person GetById(int id)
