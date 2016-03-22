@@ -19,28 +19,28 @@ namespace PeopleReference.API.Controllers
         }
 
         // GET api/people/5
-        [HttpGet("{id}")]
-        public Person Get(int id)
+        [HttpGet("GetById/{id}")]
+        public Person GetById(int id)
         {
             return dm.GetById(id);
         }
 
-        // POST api/people
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
+        //// POST api/people
+        //[HttpPost]
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// PUT api/values/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/values/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
