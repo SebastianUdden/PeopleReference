@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using System.Net.Http;
+//using System.Net.Http;
 using Newtonsoft.Json;
 using PeopleReference.API.Models;
 
@@ -20,14 +20,25 @@ namespace AngularClient.Controllers
         //    return View();
         //}
 
-        // GET: /<controller>/id
         [HttpGet]
-        public async Task<IActionResult> Index(int id)
+        public /*Task<*/IActionResult Index()
         {
-            string url = "http://localhost:60167/api/people/" + id;
-            var httpClient = new HttpClient();
-            var json = await httpClient.GetStringAsync(url);
-            var person = JsonConvert.DeserializeObject<Person>(json);
+            //string url = "http://localhost:60167/api/people/" + id;
+            //var httpClient = new HttpClient();
+            //var json = await httpClient.GetStringAsync(url);
+            //var person = JsonConvert.DeserializeObject<Person>(json);
+            return View();
+        }
+
+
+        // GET: /<controller>/id
+        [HttpPost]
+        public /*Task<*/IActionResult Index(int id)
+        {
+            //string url = "http://localhost:60167/api/people/" + id;
+            //var httpClient = new HttpClient();
+            //var json = await httpClient.GetStringAsync(url);
+            //var person = JsonConvert.DeserializeObject<Person>(json);
             return View();
         }
     }
